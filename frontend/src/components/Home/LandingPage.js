@@ -2,9 +2,9 @@ import React from "react";
 import { BsArrowRightSquare } from "react-icons/bs";
 import { GiArrowDunk } from "react-icons/gi";
 import Offering from "./Offering";
-import OurCollections from './OurCollections'
-import About from './About'
-import Footer from './Footer'
+import OurCollections from "./OurCollections";
+import About from "./About";
+import Footer from "./Footer";
 
 const LandingPage = () => {
   return (
@@ -18,7 +18,7 @@ const LandingPage = () => {
               Find your shoes from our various collections. Here shoes are
               endless and profit is also endless
             </p>
-            <div className="w-32 h-10 bg-primary flex justify-center rounded">
+            <div className="w-32 h-10 bg-primary hover:bg-red-600 cursor-pointer flex justify-center rounded">
               <a href="" type="button" className="text-white self-center ">
                 <span className="flex items-center">
                   Shop <BsArrowRightSquare className="ml-2" />
@@ -29,9 +29,7 @@ const LandingPage = () => {
         </div>
         <div className="flex flex-row justify-center items-start drop-shadow-lg rounded-xl  mt-64 sm:mt-16 w-96 h-64 md:w-96 md:h-92 lg:w-full lg:h-[400px]  sm:ml-32">
           <div>
-            <a href="">
-              <img src="assets/airmax.png" alt="" className="-rotate-[35deg]" />
-            </a>
+            <img src="assets/airmax.png" alt="" className="-rotate-[35deg]" />
           </div>
         </div>
         <div className="absolute font-semibold  mt-[565px] ml-[250px] sm:mt-52 sm:ml-[599px] md:ml-[750px] lg:mt-80 lg:ml-[1009px] xl:mt-[300px] xl:ml-[1100px]">
@@ -52,9 +50,9 @@ const LandingPage = () => {
         </div>
       </div>
       <Offering />
-      <OurCollections/>
-      <About/>
-      <Footer/>
+      <OurCollections />
+      <About />
+      <Footer />
     </>
   );
 };
