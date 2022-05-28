@@ -1,43 +1,43 @@
 import React from "react";
 import { HiOutlineSearch } from "react-icons/hi";
 import { FaUserAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="flex justify-between items-center px-4 xl:px-0 lg:mb-10 container mx-auto max-w-screen-sm sm:max-w-screen-xl">
       <div className="flex items-center relative">
-        <a href="#">
+        <Link to="/">
           <img
             src="assets/shoe.png"
             alt="logo"
             className="h-20 w-20 sm:w-24 sm:h-24"
           />
-        </a>
-        <a
-          href="#"
+        </Link>
+        <Link
+          to="/"
           className="hidden sm:block text-primary -ml-2 logo-name text-xl"
         >
           Shoe Time
-        </a>
+        </Link>
       </div>
       <div className="">
         <ul className="flex space-x-3">
           <li>
-            <a href="#" className="hover:text-primary">
+            <Link to="/" className="hover:text-primary">
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#" className="hover:text-primary">
+            <Link to="#" className="hover:text-primary">
               Shop
-            </a>
+            </Link>
           </li>
           <li>
             <a href="#about" className="hover:text-primary mr-3 sm:mr-0">
               About
             </a>
           </li>
-          
         </ul>
       </div>
       <div className="flex items-center relative ">
@@ -51,9 +51,9 @@ const Navbar = () => {
             />
           </li>
           <li className="flex items-center">
-            <a href="" className="hover:text-primary md:ml-3">
+            <Link to="/login" className="hover:text-primary md:ml-3">
               <FaUserAlt />
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

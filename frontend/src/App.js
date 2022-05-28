@@ -7,9 +7,16 @@ function App() {
       <>
         <Navbar />
         <Icons />
-        <LandingPage/>
 
-        
+        <Routes>
+          <Route path="/" element={<LandingPage/>}></Route>
+
+          <Route path="login" element={<Login />}></Route>
+
+          <Route path="register" element={<Register />}></Route>
+
+          
+        </Routes>
 
       </>
     </Router>
