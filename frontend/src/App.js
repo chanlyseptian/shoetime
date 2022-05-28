@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <div className="container mx-auto max-w-screen-sm sm:max-w-screen-xl">
+      <div className="">
         <Navbar />
         <Icons />
         <LandingPage/>
