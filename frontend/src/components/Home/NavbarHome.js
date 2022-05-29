@@ -3,7 +3,7 @@ import { HiOutlineSearch } from "react-icons/hi";
 import { FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Navbar = () => {
+const NavbarHome = () => {
   return (
     <nav className="flex justify-between items-center px-4 xl:px-0 lg:mb-10 container mx-auto max-w-screen-sm sm:max-w-screen-xl">
       <div className="flex items-center relative">
@@ -29,7 +29,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="#" className="hover:text-primary">
+            <Link to="/shop" className="hover:text-primary">
               Shop
             </Link>
           </li>
@@ -61,4 +61,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarHome;

@@ -5,10 +5,13 @@ import Offering from "./Offering";
 import OurCollections from "./OurCollections";
 import About from "./About";
 import Footer from "./Footer";
+import { NavbarHome, Icons } from "../";
 
 const LandingPage = () => {
   return (
     <>
+      <NavbarHome />
+      <Icons />
       <div className="flex flex-col sm:flex-row justify-center items-center relative container mx-auto max-w-screen-sm sm:max-w-screen-xl">
         <div className="flex flex-row justify-center mt-10 sm:mt-0 lg:mt-10 w-32 h-32 md:w-96 md:h-92 lg:w-full lg:h-full">
           <div className="space-y-5 ">
@@ -19,7 +22,7 @@ const LandingPage = () => {
               endless and profit is also endless
             </p>
             <div className="w-32 h-10 bg-primary hover:bg-red-600 cursor-pointer flex justify-center rounded">
-              <a href="" type="button" className="text-white self-center ">
+              <a href="/shop" type="button" className="text-white self-center ">
                 <span className="flex items-center">
                   Shop <BsArrowRightSquare className="ml-2" />
                 </span>

@@ -1,25 +1,15 @@
-import { Navbar, Login, Register, LandingPage, Icons } from "./components";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Navbar, Icons } from "./components";
+import HomeRoute from './components/HomeRoute'
+import ShopRoute from './components/ShopRoute'
 
 function App() {
   return (
-    <Router>
-      <>
-        <Navbar />
-        <Icons />
-
-        <Routes>
-          <Route path="/" element={<LandingPage/>}></Route>
-
-          <Route path="login" element={<Login />}></Route>
-
-          <Route path="register" element={<Register />}></Route>
-
-          
-        </Routes>
-
-      </>
-    </Router>
+    <>
+      {/* <Navbar />
+      <Icons /> */}
+      <HomeRoute/>
+      <ShopRoute/>
+    </>
   );
 }
 
