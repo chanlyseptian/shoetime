@@ -1,5 +1,5 @@
 import React from "react";
-import { Login, Register, LandingPage, NavbarHome, Icons } from ".";
+import { Login, Register, LandingPage, NavbarHome, Icons } from "..";
 import { Routes, Route } from "react-router-dom";
 
 const HomeRoute = () => {

@@ -1,7 +1,10 @@
 import React from "react";
 import NavbarShop from "./NavbarShop";
 import EmptyCart from "./EmptyCart";
-import LineItems from './LineItems'
+import LineItems from "./LineItems";
+import { Link } from "react-router-dom";
+import { BsArrowLeft } from "react-icons/bs";
+import { IoBagCheckOutline } from "react-icons/io5";
 
 const ShoppingCart = () => {
   return (
@@ -14,16 +17,26 @@ const ShoppingCart = () => {
 
         {/* <EmptyCart/> */}
 
-        <LineItems/>
+        <LineItems />
 
-        <div className="flex flex-col items-center mt-10">
-          <div className="flex space-x-10">
+        <div className="flex flex-col items-center mt-10 ">
+          <div className="flex space-x-10 mb-8">
             <h1>Sub Total </h1>
-            <h1 className="font-bold text-gray-600">Rp.99.999</h1>
+            <h1 className="font-bold border-b-2 border-primary">Rp.99.999</h1>
           </div>
-          <button className="bg-primary text-white text-sm hover:bg-red-800 mt-3 w-auto py-2 px-3 rounded h-full">
-            Check Out
+
+          <button className="w-32 p-1.5 text-white rounded bg-primary hover:bg-red-800 flex items-center">
+            <IoBagCheckOutline className="mx-2 text-xl"/>
+            <span className="text-sm">Check Out</span> 
           </button>
+          <p className="text-gray-800 m-2">or</p>
+          <Link
+            to="/shop"
+            type="button"
+            className="flex items-center text-primary hover:text-red-700 font-semibold"
+          >
+            <BsArrowLeft className="mr-2 text-2xl" /> Continue Shopping
+          </Link>
         </div>
       </div>
     </>

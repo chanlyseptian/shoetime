@@ -1,11 +1,18 @@
 import NavbarHome from "./Home/NavbarHome";
-import Login from "./Login";
-import Register from "./Register";
+import Login from "./Home/Login";
+import Register from "./Home/Register";
 import LandingPage from "./Home/LandingPage";
-import Icons from "./Icons";
+import Icons from "./Home/Icons";
 import ProductList from "./Shop/ProductList";
 import ShoppingCart from "./Shop/ShoppingCart";
-import Loading from './Loading'
+import Profile from "./Profile/Profile";
+import HomeRoute from "./Home/HomeRoute";
+import ShopRoute from "./Shop/ShopRoute";
+import ProfileRoute from "./Profile/ProfileRoute";
+import EditProfile from "./Profile/EditProfile";
+import NavbarShop from "./Shop/NavbarShop";
+import Order from './Profile/Order'
+import Loading from "./Loading";
 
 export {
   NavbarHome,
@@ -15,5 +22,12 @@ export {
   Icons,
   ProductList,
   ShoppingCart,
-  Loading
+  NavbarShop,
+  Loading,
+  Profile,
+  HomeRoute,
+  ShopRoute,
+  ProfileRoute,
+  EditProfile,
+  Order,
 };

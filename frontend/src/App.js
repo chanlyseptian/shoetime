@@ -1,14 +1,11 @@
-import { Navbar, Icons } from "./components";
-import HomeRoute from './components/HomeRoute'
-import ShopRoute from './components/ShopRoute'
+import { HomeRoute, ShopRoute, ProfileRoute } from "./components";
 
 function App() {
   return (
     <>
-      {/* <Navbar />
-      <Icons /> */}
-      <HomeRoute/>
-      <ShopRoute/>
+      <HomeRoute />
+      <ShopRoute />
+      <ProfileRoute/>
     </>
   );
 }

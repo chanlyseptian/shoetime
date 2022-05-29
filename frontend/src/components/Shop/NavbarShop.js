@@ -47,11 +47,12 @@ const NavbarHome = () => {
           <li className="flex items-center text-xl ">
             <Link to="/cart" className="hover:text-primary">
               <AiOutlineShoppingCart />
+              <span className="absolute text-sm -mt-2 ml-3.5 ">0</span>
             </Link>
           </li>
 
           <li className="flex items-center">
-            <Link to="/login" className="hover:text-primary">
+            <Link to="/profile" className="hover:text-primary">
               <FaUserAlt />
             </Link>
           </li>

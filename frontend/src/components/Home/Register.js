@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { NavbarHome, Icons } from "./";
+import { NavbarHome, Icons } from "../";
 
 const Register = () => {
   return (
