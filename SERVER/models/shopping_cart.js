@@ -11,6 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      shopping_cart.belongsTo(models.users)
+      shopping_cart.belongsToMany(models.orders,{through:models.line_items})
+      shopping_cart.belongsToMany(models.products,{through:models.line_items})
     }
   }
   shopping_cart.init({
