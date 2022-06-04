@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { NavbarHome, Icons } from "../";
+import { Icons, NavbarLoginAdmin } from "../";
 import { useSelector, useDispatch } from "react-redux";
-import { reset } from "../../features/auth/authSlice";
-import { login } from "../../features/auth/authAction";
+import { reset } from "../../features/admin/adminSlice";
+import { login } from "../../features/admin/adminAction";
 import { Loading } from "../";
 import Swal from "sweetalert2";
 
-const Login = () => {
+const AdminLogin = () => {
   const [formData, setFormData] = useState({
-    userEmail: "",
+    userType: "",
     userPassword: "",
   });
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { user, isLoading, isError, isSuccess, message } = useSelector(
-    (state) => state.auth
+  const { admin, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.admin
   );
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Login = () => {
       );
     }
 
-    if (isSuccess && user) {
+    if (isSuccess && admin) {
       const Toast = Swal.mixin({
         toast: true,
         position: "top-end",
@@ -45,15 +45,11 @@ const Login = () => {
         icon: "success",
         title: "Signed in successfully",
       });
-      navigate("/shop");
+      navigate("/admin");
     }
 
     dispatch(reset());
-  }, [user, isError, isSuccess, message, navigate, dispatch]);
-
-  // useEffect(() => {
-  //   user && navigate("/");
-  // }, [user, navigate]);
+  }, [admin, isError, isSuccess, message, navigate, dispatch]);
 
   const submitHandler = (e) => {
     dispatch(login(formData));
@@ -65,30 +61,28 @@ const Login = () => {
 
   return (
     <>
-      <NavbarHome />
+      <NavbarLoginAdmin />
       <Icons />
       <div className="container mx-auto max-w-screen-sm sm:max-w-screen-xl relative flex flex-col justify-center space-y-1 sm:space-y-20 md:space-y-0 sm:flex-row">
-        <div className="w-full h-96 ">
-          <img src="assets/login.png" alt="" />
+        <div className="w-full h-96 lg:mt-10">
+          <img src="assets/admin.png" alt="" />
         </div>
-        <div className="w-full h-[450px] sm:h-[520px] bg-white flex items-center justify-center flex-col rounded-lg ">
-          <h1 className="text-4xl text-primary font-bold z-10">
-            Welcome Back !
-          </h1>
+        <div className="w-full h-[450px] sm:h-[520px] bg-white flex items-center justify-center flex-col rounded-lg">
+          <h1 className="text-4xl text-primary font-bold">Admin Login </h1>
           <h1 className="text-baseline text-red-400 m-7">
             Please log in into your account
           </h1>
           <form action="">
             <div className="flex flex-col w-[300px]">
-              <label htmlFor="">Email</label>
+              <label htmlFor="">Username</label>
               <input
                 type="text"
-                id="userEmail"
-                name="userEmail"
+                id="userType"
+                name="userType"
                 onChange={(e) =>
-                  setFormData({ ...formData, userEmail: e.target.value })
+                  setFormData({ ...formData, userType: e.target.value })
                 }
-                placeholder="Enter your email"
+                placeholder="Enter your Type"
                 className="bg-slate-100 mb-4 p-3 rounded focus:outline-none"
               />
               <label htmlFor="">Password</label>
@@ -102,7 +96,6 @@ const Login = () => {
                 placeholder="Password"
                 className="bg-slate-100 mb-4 p-3 rounded focus:outline-none"
               />
-
               <button
                 id="submit"
                 type="submit"
@@ -113,19 +106,10 @@ const Login = () => {
               </button>
             </div>
           </form>
-          <p className="text-sm text-gray-400">
-            Doesn't have an account ?{" "}
-            <Link
-              to="/register"
-              className="text-primary border-b-2 border-red-300 hover:text-red-700 hover:border-red-700"
-            >
-              Sign Up
-            </Link>
-          </p>
         </div>
       </div>
     </>
   );
 };
 
-export default Login;
+export default AdminLogin;

@@ -1,11 +1,12 @@
-import { HomeRoute, ShopRoute, ProfileRoute } from "./components";
+import { HomeRoute, ShopRoute, ProfileRoute, CMSRoute } from "./components";
 
 function App() {
   return (
     <>
       <HomeRoute />
       <ShopRoute />
-      <ProfileRoute/>
+      <ProfileRoute />
+      <CMSRoute />
     </>
   );
 }

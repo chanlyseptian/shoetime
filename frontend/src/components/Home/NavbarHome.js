@@ -33,11 +33,6 @@ const NavbarHome = () => {
               Shop
             </Link>
           </li>
-          <li>
-            <a href="#about" className="hover:text-primary mr-3 sm:mr-0">
-              About
-            </a>
-          </li>
         </ul>
       </div>
       <div className="flex items-center relative ">

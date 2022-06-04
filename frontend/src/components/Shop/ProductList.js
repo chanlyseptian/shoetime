@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NavbarShop from "./NavbarShop";
 import { BsCartPlus } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 const ProductList = () => {
+  const { user } = useSelector(
+    (state) => state.auth
+  );
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    }
+  }, [user, navigate]);
+
   return (
     <>
       <NavbarShop />
@@ -90,7 +104,6 @@ const ProductList = () => {
             </div>
           </div>
 
-
           <div className="w-72 h-72 bg-mysecondarygray mb-40">
             <img
               src="assets/nike4.png"
@@ -143,7 +156,6 @@ const ProductList = () => {
             </div>
           </div>
 
-
           <div className="w-72 h-72 bg-mysecondarygray mb-40">
             <img
               src="assets/nike6.png"
@@ -169,7 +181,6 @@ const ProductList = () => {
               </button>
             </div>
           </div>
-
 
           <div className="w-72 h-72 bg-mysecondarygray mb-40">
             <img
