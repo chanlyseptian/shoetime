@@ -3,7 +3,7 @@ import {
   login,
   logout,
   register,
-  // update,
+  update,
   // getUserDetail,
 } from "../auth/authAction";
 
@@ -66,6 +66,19 @@ export const authSlice = createSlice({
         state.message = action.payload;
         state.user = null;
       })
+      .addCase(update.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(update.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.userData = action.payload;
+      })
+      .addCase(update.rejected, (state, action) => {
+        state.isLoading = false;
+        state.isError = true;
+        state.message = action.payload;
+      });
   },
 });
 

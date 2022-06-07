@@ -25,6 +25,7 @@ const NavbarHome = () => {
       if (result.isConfirmed) {
         dispatch(logout());
         dispatch(reset());
+        navigate("/login");
       }
     });
   };

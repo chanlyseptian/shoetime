@@ -1,8 +1,19 @@
-import React from "react";
+import React, {  useEffect } from "react";
 import { NavbarShop } from "../";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Profile = () => {
+  const { user } = useSelector((state) => state.auth);
+  // console.log(user.access_token);
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    } 
+  }, [user, navigate]);
+
   return (
     <>
       <NavbarShop />
@@ -34,28 +45,28 @@ const Profile = () => {
               <div className="flex flex-col w-[300px]">
                 <label className="text-gray-500">Username</label>
                 <input
-                  value="Alexandra"
+                  value={user.foundEmail.userName ? user.foundEmail.userName : 'Alexandra'}
                   className="bg-transparent mb-4 rounded focus:outline-none"
                   disabled
                 />
 
                 <label className="text-gray-500">Email</label>
                 <input
-                  value="asd@gmail.com"
+                  value={user.foundEmail.userEmail ? user.foundEmail.userEmail : 'asd@gmail.com'}
                   className="bg-transparent mb-4 rounded focus:outline-none"
                   disabled
                 />
 
                 <label className="text-gray-500">Birthday</label>
                 <input
-                  value="6 June 1999"
+                  value={user.foundEmail.userBirthdate ? user.foundEmail.userBirthdate : "fill your birthdate"}
                   className="bg-transparent mb-4 rounded focus:outline-none"
                   disabled
                 />
 
                 <label className="text-gray-500">Gender</label>
                 <input
-                  value="asd@gmail.com"
+                  value={user.foundEmail.userGender ? user.foundEmail.userGender : "choose your gender"}
                   className="bg-transparent mb-4 rounded focus:outline-none"
                   disabled
                 />

@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 const route = require("./routes");
 app.use(route);
 
-app.post("/single", upload.single("primFilename"), (req, res) => {
+app.post("/single", upload.single("userAvatar"), (req, res) => {
   console.log(req.file);
   res.send(`upload success`);
 });

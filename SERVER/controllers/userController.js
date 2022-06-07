@@ -52,7 +52,7 @@ class userController {
       if (foundEmail) {
         if (decryptPassword(userPassword, foundEmail.userPassword)) {
           let access_token = tokenGenerator(foundEmail);
-          res.status(200).json({ access_token });
+          res.status(200).json({ access_token, foundEmail});
 
           let verifyToken = tokenVerifier(access_token);
           console.log(verifyToken);
